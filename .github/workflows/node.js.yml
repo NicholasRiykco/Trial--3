@@ -1,39 +1,18 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
-    branches:
-      - main  # Change this to your deployment branch
-
-permissions:
-  contents: write  # Allows pushing changes to the repo
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  deploy:
+  build:
+
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'  # Use a stable version
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the app
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        env:
-          GIT_USER: ${{ github.actor }}
-          GIT_EMAIL: noreply@github.com
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: |
-          git config --global user.name "$GIT_USER"
-          git config --global user.email "$GIT_EMAIL"
-          npm install --save-dev gh-pages
-          npm run deploy
+    - name: Build and Deploy React app to GitHub Pages
+      uses: omkartapale/react-deployment-gh-pages@v1.0.0
