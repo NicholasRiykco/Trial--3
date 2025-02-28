@@ -22,7 +22,7 @@ jobs:
       run: npm install
       
     - name: Install dependencies
-      run: npm install vite@latest
+      run: npm install vite
 
 
     - name: Install gh-pages
