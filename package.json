@@ -7,7 +7,7 @@
     "dev": "vite",
     "homepage": "https://nicholasriykco.github.io/trial--3",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
