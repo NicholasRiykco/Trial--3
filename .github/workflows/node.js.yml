@@ -20,6 +20,10 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      
+    - name: Install dependencies
+      run: npm install vite@latest
+
 
     - name: Install gh-pages
       run: npm install --save gh-pages
