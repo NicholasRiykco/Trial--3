@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "homepage": "https://nicholasriykco.github.io",
-    "build": "vite build",
+    "homepage": "https://nicholasriykco.github.io/trial--3",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
     "lint": "eslint .",
     "preview": "vite preview"
   },
