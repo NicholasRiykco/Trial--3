@@ -31,7 +31,7 @@ jobs:
         env:
           GIT_USER: ${{ github.actor }}
           GIT_EMAIL: noreply@github.com
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
           git config --global user.name "$GIT_USER"
           git config --global user.email "$GIT_EMAIL"
